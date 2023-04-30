@@ -1,52 +1,88 @@
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
-  
-  /* Add some content at the bottom of the video/page */
-  .content {
-    position: fixed;
-    bottom: 0;
-    background: rgb(246 138 131 / 22%);
-    color: #f1f1f1;
-    width: 50%;
-    padding: 0px 228px;
-    margin: 2px 262px;
-    border-radius: 50px;
-  }
-  .nevigation{
-    position: fixed;
-    top: 1px;
-    border-radius: 30px;
-    background-color: rgb(255 103 241 / 53%);
-    width: 100%;
-    margin: 5px auto;
-    padding: 4px 5px;
-  }
-  .nevigation li{
+/* Default styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    width: 10%;
-    list-style: none;
-    display:inline-block;
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  margin: 0 10px;
+}
+
+.mysearch {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mysearch input[type=text] {
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 480px) {
+  /* Mobile styles */
+  img {
+      top: 0;
+      left: 0;
   }
-  .nevigation li:hover{
-    background-color: rgb(142 103 255 / 82%);
-cursor: pointer;
+
+  .content {
+      position: static;
+      transform: none;
+      text-align: left;
   }
-  #search{
-    position:fixed;
-    right: 23px;
-    top: 29px;
-    border-radius: 20px;
-  }
-  img{
-    position: fixed;
-    bottom: 2px;
-    width: 264px;
-    height: 172px;
-    border-radius: 60px
-  }
+
+
+}
